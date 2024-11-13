@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+</head>
+<body>
+    <h1>Detection Result</h1>
+    <p><strong>Result:</strong> {{ result }}</p>
+    <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image" width="200px">
+    <form action="/" method="post">
+        <label for="remarks">Remarks:</label>
+        <input type="text" id="remarks" name="remarks">
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Upload another image</a>
+</body>
+</html>
+
