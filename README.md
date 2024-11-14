@@ -44,3 +44,7 @@ The training data is imbalanced containing 1569 healthy cases and 803 cancer cas
 
 ### Note:
 The data analysis and model building process is present in Model_Build.ipynb file.
+## Key Features:
+* The model is trained using Transfer learning on ResNet50.
+* Tensorflow and Keras is used.
+* Oversampling is used in the training data to negate the effects of data imbalance.
