@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Detection Result</title>
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Detection Result</h1>
-    <p><strong>Result:</strong> {{ result }}</p>
-    <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image" width="200px">
-    <form action="/" method="post">
-        <label for="remarks">Remarks:</label>
-        <input type="text" id="remarks" name="remarks">
-        <button type="submit">Submit</button>
-    </form>
-    <a href="/">Upload another image</a>
+    <div class="container">
+        <h1>Detection Results</h1>
+        <form action="{{ url_for('save_remarks') }}" method="post">
+            {% for item in results %}
+                <div class="result-card">
+                    <p><strong>Result:</strong> {{ item.result }}</p>
+                    <img src="{{ url_for('static', filename='uploaded_images/' + item.filename) }}" width="200px">
+                    <label for="remarks-{{ item.filename }}">Remarks:</label>
+                    <input type="text" id="remarks-{{ item.filename }}" name="{{ item.filename }}">
+                </div>
+            {% endfor %}
+            <button type="submit" class="button">Save Remarks</button>
+        </form>
+        <a href="/" class="button">Upload More Images</a>
+    </div>
 </body>
 </html>
 

@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Breast Cancer Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Upload an Image for Detection</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Upload Image</button>
-    </form>
+    <div class="container">
+        <h1>Upload Images for Detection</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" multiple required>
+            <button type="submit">Upload Images</button>
+        </form>
+    </div>
 </body>
 </html>
 
