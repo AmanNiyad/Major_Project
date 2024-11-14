@@ -26,3 +26,21 @@ The training data is imbalanced containing 1569 healthy cases and 803 cancer cas
 * To run the UI:  
 `python app.py`
 
+* User Interface.
+  
+  * The landing page is a simple image browse and upload button to enable the user to input the images for prediction.
+    
+![plot](./Screenshots/Landing_page.png)
+
+  * The interface supports uploading multiple images or entire directories.
+
+![plot](./Screenshots/Selection.png)
+
+  * The prediction results are displayed along with the image.
+  * A remark column is also provided to obtain information if the prediction is deemed incorrect by the user.
+  * The remarks are saved along with the image name in the remarks.txt file.
+
+![plot](./Screenshots/Results_page.png)
+
+### Note:
+The data analysis and model building process is present in Model_Build.ipynb file.
